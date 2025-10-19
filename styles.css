@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #818cf8;
+  --text-color: #F1F5F9;
+  --bg-color: #0F172A;
+  --card-bg: #27272a;
+  --shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  --border-radius: 1rem;
+}
+
+:root.light {
+  --primary-color: #4f46e5;
+  --text-color: #0F172A;
+  --bg-color: #F9FAFB;
+  --card-bg: #f9f9ff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body, .profile-card {
+  animation: fade-theme 0.5s ease;
+}
+
+.theme-transition,
+.theme-transition * {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+@keyframes fade-theme {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
+}
+
+.profile-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 350px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.2);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  border: 3px solid var(--primary-color);
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.time {
+  font-weight: 500;
+  color: #bbb;
+}
+
+.light .time {
+  color: #555;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #312e81;
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+
+.lists h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.lists ul {
+  list-style: disc inside;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .lists {
+    grid-template-columns: 1fr;
+  }
+}
