@@ -112,7 +112,7 @@ function initFormValidation() {
             validate: () => {
                 const checked = Array.from(contactReasonInputs).some(input => input.checked);
                 if (!checked) {
-                    return 'Please select a query type.';
+                    return 'Please select the purpose of your message.';
                 }
                 return '';
             }
@@ -280,3 +280,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initTimeUpdate();
     initFormValidation();
 });
+
