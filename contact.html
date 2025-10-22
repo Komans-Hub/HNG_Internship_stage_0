@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav data-testid="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+            <button 
+                id="theme-toggle" 
+                data-testid="theme-toggle"
+                aria-label="Toggle dark/light theme">
+                <span id="theme-icon">☀️</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section" data-testid="contact-section">
+            <h1 data-testid="contact-heading">Contact Us</h1>
+            <div 
+                id="success-message" 
+                class="success-message" 
+                data-testid="success-message"
+                role="alert"
+                aria-live="polite"
+                hidden>
+                <p>✓ Thank you for your message! We'll be in touch soon.</p>
+            </div>
+            <form 
+                id="contact-form" 
+                data-testid="contact-form"
+                novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name" data-testid="name-label">
+                            First Name <span aria-label="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="first-name" 
+                            name="firstName"
+                            data-testid="name-input"
+                            aria-required="true"
+                            aria-describedby="first-name-error">
+                        <span 
+                            id="first-name-error" 
+                            class="error-message" 
+                            data-testid="name-error"
+                            role="alert"
+                            aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">
+                            Last Name <span aria-label="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="last-name" 
+                            name="lastName"
+                            aria-required="true"
+                            aria-describedby="last-name-error">
+                        <span 
+                            id="last-name-error" 
+                            class="error-message"
+                            role="alert"
+                            aria-live="polite"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-testid="email-label">
+                        Email Address <span aria-label="required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        data-testid="email-input"
+                        aria-required="true"
+                        aria-describedby="email-error">
+                    <span 
+                        id="email-error" 
+                        class="error-message" 
+                        data-testid="email-error"
+                        role="alert"
+                        aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend data-testid="subject-label">
+                            Reason for Contact <span aria-label="required">*</span>
+                        </legend>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input 
+                                    type="radio" 
+                                    id="general-enquiry" 
+                                    name="contactReason"
+                                    value="General Enquiry"
+                                    data-testid="subject-input"
+                                    aria-describedby="contact-reason-error">
+                                <label for="job-offer">Job Offer</label>
+                            </div>
+                            <div class="radio-option">
+                                <input 
+                                    type="radio" 
+                                    id="support-request" 
+                                    name="contact-reason"
+                                    value="Support Request"
+                                    aria-describedby="contact-reason-error">
+                                <label for="0thers">Others</label>
+                            </div>
+                        </div>
+                        <span 
+                            id="contact-reason-error" 
+                            class="error-message" 
+                            data-testid="subject-error"
+                            role="alert"
+                            aria-live="polite"></span>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-testid="message-label">
+                        Message <span aria-label="required">*</span>
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message"
+                        rows="6"
+                        data-testid="message-input"
+                        aria-required="true"
+                        aria-describedby="message-error"></textarea>
+                    <span 
+                        id="message-error" 
+                        class="error-message" 
+                        data-testid="message-error"
+                        role="alert"
+                        aria-live="polite"></span>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="consent" 
+                        name="consent"
+                        aria-required="true"
+                        aria-describedby="consent-error">
+                    <label for="consent">
+                        I consent to being contacted by the team <span aria-label="required">*</span>
+                    </label>
+                    <span 
+                        id="consent-error" 
+                        class="error-message"
+                        role="alert"
+                        aria-live="polite"></span>
+                </div>
+                <button 
+                    type="submit" 
+                    data-testid="submit-button"
+                    class="submit-btn">
+                    Submit
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer data-testid="footer">
+        <p>&copy; 2025 Komans-Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
